@@ -24,10 +24,6 @@
 //  THE SOFTWARE.
 
 #import "EZAudioPlayer.h"
-
-#if TARGET_OS_IPHONE
-#elif TARGET_OS_MAC
-#endif
 @interface EZAudioPlayer () <EZAudioFileDelegate,EZOutputDataSource>
 {
   BOOL _eof;
@@ -119,7 +115,6 @@
   // Defaults
   self.output = [EZOutput sharedOutput];
   
-#if TARGET_OS_IPHONE
   // Configure the AVSession
   AVAudioSession *audioSession = [AVAudioSession sharedInstance];
   NSError *err = NULL;
@@ -131,8 +126,6 @@
   if( err ){
     NSLog(@"There was an error sending the audio to the speakers");
   }
-#elif TARGET_OS_MAC
-#endif
   
 }
 

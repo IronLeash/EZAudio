@@ -24,14 +24,9 @@
 //  THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 #import "TargetConditionals.h"
-
 #import "EZAudio.h"
-
-#if TARGET_OS_IPHONE
-  #import <AVFoundation/AVFoundation.h>
-#elif TARGET_OS_MAC
-#endif
 
 @class EZAudioPlayer;
 

@@ -31,7 +31,7 @@
 /**
  The types of plots that can be displayed in the view using the data.
  */
-typedef NS_ENUM(NSInteger,EZPlotType){
+typedef enum{
   /**
    Plot that displays only the samples of the current buffer
    */
@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger,EZPlotType){
    Plot that displays a rolling history of values using the RMS calculated for each incoming buffer
    */
   EZPlotTypeRolling
-};
+}EZPlotType;
 
 /**
  EZPlot is a cross-platform (iOS and OSX) class used to subclass the default view type (either UIView or NSView, respectively).
@@ -49,14 +49,8 @@ typedef NS_ENUM(NSInteger,EZPlotType){
  
  This class isn't meant to be directly used in practice, but instead establishes the default properties and behaviors subclasses should obey to provide consistent behavior accross multiple types of graphs (i.e. set background color, plot type, should fill in, etc.). Subclasses should make use of the inherited properties from this class to allow all child plots to benefit from the same 
  */
-#if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
 @interface EZPlot : UIView
-#elif TARGET_OS_MAC
-#import <Cocoa/Cocoa.h>
-@interface EZPlot : NSView
-#endif
-
 #pragma mark - Properties
 ///-----------------------------------------------------------
 /// @name Customizing The Plot's Appearance

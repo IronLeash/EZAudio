@@ -23,8 +23,6 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#if TARGET_OS_IPHONE
-
 #import "EZAudioPlotGLKViewController.h"
 #import "EZAudio.h"
 
@@ -477,7 +475,3 @@
 }
 
 @end
-
-#elif TARGET_OS_MAC
-
-#endif

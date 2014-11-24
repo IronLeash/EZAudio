@@ -1,3 +1,4 @@
+
 //
 //  EZOutput.h
 //  EZAudio
@@ -25,11 +26,6 @@
 
 #import <Foundation/Foundation.h>
 #import <AudioToolbox/AudioToolbox.h>
-#if TARGET_OS_IPHONE
-#elif TARGET_OS_MAC
-#import <AudioUnit/AudioUnit.h>
-#endif
-
 #import "TPCircularBuffer.h"
 
 @class EZOutput;

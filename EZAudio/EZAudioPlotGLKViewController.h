@@ -24,9 +24,6 @@
 //  THE SOFTWARE.
 
 #import "TargetConditionals.h"
-
-#if TARGET_OS_IPHONE
-
 #import "EZAudioPlotGL.h"
 
 @class EZAudio;
@@ -122,6 +119,3 @@
      withBufferSize:(UInt32)bufferSize;
 
 @end
-
-#elif TARGET_OS_MAC
-#endif

@@ -216,13 +216,8 @@
                                    interleaved:(BOOL)interleaved {
     
     asbd->mFormatID = kAudioFormatLinearPCM;
-#if TARGET_OS_IPHONE
     int sampleSize = sizeof(float);
     asbd->mFormatFlags = kAudioFormatFlagsCanonical;
-#elif TARGET_OS_MAC
-    int sampleSize = sizeof(Float32);
-    asbd->mFormatFlags = kAudioFormatFlagsNativeFloatPacked;
-#endif
     asbd->mBitsPerChannel = 8 * sampleSize;
     asbd->mChannelsPerFrame = nChannels;
     asbd->mFramesPerPacket = 1;
